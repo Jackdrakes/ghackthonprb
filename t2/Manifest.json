@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name":"obscene blocker",
+    "description": "This extension blocking some sites for example  youtube, facebook, netflix, instagram. The same mechanism is to be appliied to the pornographic sites too",
+    "version": "1.0",
+    
+    "action":{"default_popup" : "window.html"},
+    "content_scripts":[
+        {
+            "matches":["<all_urls>"],
+
+            "js": ["content.js"],
+            "run_at": "document_end"
+        }
+    ],
+
+    "host_permissions": [
+        "https://www.youtube.com/*",
+        "https://www.facebook.com/*",
+        "https://www.netflix.com/*",
+        "https://www.instagram.com/*"
+      ]
+}
